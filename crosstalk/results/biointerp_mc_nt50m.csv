@@ -1,0 +1,11 @@
+intervention,seed,mean_delta,real_higher,n
+synonymous recode,0,0.3300416251481171,25,29
+synonymous recode,1,0.33805273410635744,24,29
+synonymous recode,2,0.3085575940458783,23,29
+synonymous recode,3,0.32665077083103994,25,29
+synonymous recode,4,0.33412398986954117,24,29
+codon-order shuffle,0,0.3414916915678667,23,29
+codon-order shuffle,1,0.2841043942336373,22,29
+codon-order shuffle,2,0.4088912312525957,26,29
+codon-order shuffle,3,0.2880072401319853,22,29
+codon-order shuffle,4,0.20977555116473628,20,29

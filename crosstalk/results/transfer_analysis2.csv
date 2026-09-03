@@ -1,0 +1,11 @@
+a,b,cka,eta2,n_groups,n_variants,r2,rho_within_bg,stage
+nt,esm,0.6627859805879663,,,,0.41243773348396107,,alignment
+onehot,esm,0.8192465738232878,,,,0.5525274263273587,,alignment
+onehot,nt,0.7125236058689688,,,,0.5328217463638949,,alignment
+nt_likelihood,,,0.6427472721779564,,79,,,codon_invariance
+nt_representation,,,0.6718791636869264,,79,,,codon_invariance
+canonical,,,,3814,,,0.14127394445549146,causal_control
+synonymous_scramble,,,,3814,,,0.06357128653807914,causal_control
+random_mutant_codon,,,,3814,,,0.14322927023265064,causal_control
+frameshift+1,,,,3814,,,0.14291774375289984,causal_control
+reverse_complement,,,,3814,,,0.12932325843441372,causal_control

@@ -1,0 +1,2 @@
+model,n_sequences,reference_delta,contrast,a,b,probes,n,mean_diff,ci_lo,ci_hi,boot_lo,boot_hi,a_lower,ties,binom_p,ratio_to_reference,verdict,passed
+LongSafari/hyenadna-small-32k-seqlen-hf,24,0.04821429166666669,frame-anchored stop,stop in frame,stop out of frame,reading_frame,24,0.0005830833333333174,-0.0004478963203337614,0.0016140629870003962,-0.00029702291666666784,0.0016151260416666432,14,0,0.5412561893463135,0.012093578753878832,NULL,False

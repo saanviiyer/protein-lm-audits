@@ -1,0 +1,16 @@
+protein,partner_a,partner_b,rho_likelihood,n,n_positions,to_alanine,from_alanine,top_position_share,positional_gini,subs_per_position,distinct_target_residues
+BLIP,TEM-1 beta-lactamase,SHV-1 beta-lactamase,-0.2005928853754941,23,22,0.9565217391304348,0.0,0.08695652173913043,0.041501976284585046,1.0454545454545454,2
+BPTI,Bovine trypsin,Bovine alpha-chymotrypsin,0.026828041737019262,31,15,0.4838709677419355,0.0,0.5483870967741935,0.4817204301075269,2.066666666666667,17
+Fasciculin II,T. californica acetylcholinesterase,Human acetylcholinesterase,0.14436090225563908,20,11,0.0,0.05,0.2,0.29090909090909084,1.8181818181818181,13
+H2-A plus 3K peptide,14.C6 TCR,J809.B5 TCR,0.05454545454545456,11,11,1.0,0.0,0.09090909090909091,0.0,1.0,1
+H2-A plus 3K peptide,14.C6 TCR,YAe62 TCR,-0.05454545454545456,11,11,1.0,0.0,0.09090909090909091,0.0,1.0,1
+H2-A plus 3K peptide,J809.B5 TCR,YAe62 TCR,-0.27272727272727276,11,11,1.0,0.0,0.09090909090909091,0.0,1.0,1
+HEW Lysozyme,HyHEL-63 fab,HyHEL-10,-0.309090909090909,10,10,1.0,0.0,0.1,0.0,1.0,1
+Human growth hormone,hGH binding protein,Prolactin receptor,0.25913043478260867,24,24,1.0,0.0,0.041666666666666664,0.0,1.0,1
+IgG1-kappa D1.3 Fv,E5.2 Fv,HEW Lysozyme,-0.11515151515151514,10,10,0.9,0.0,0.1,0.0,1.0,2
+Interferon alpha/beta receptor 1,Interferon alpha-2,Interferon omega-1,0.33333538526568934,12,12,0.9166666666666666,0.0,0.08333333333333333,0.0,1.0,2
+Membrane-type serine protease 1,BPTI,E2 fab,0.05714285714285714,20,20,1.0,0.0,0.05,0.0,1.0,1
+Membrane-type serine protease 1,BPTI,S4 fab,0.12180451127819547,20,20,1.0,0.0,0.05,0.0,1.0,1
+Membrane-type serine protease 1,E2 fab,S4 fab,-0.03458646616541353,20,20,1.0,0.0,0.05,0.0,1.0,1
+PMI peptide,MDM2,MDMX,-0.04242424242424241,10,10,1.0,0.0,0.1,0.0,1.0,1
+Ribonuclease inhibitor,Angiogenin,RNase A,0.18529411764705883,16,14,0.875,0.0,0.125,0.10714285714285714,1.1428571428571428,2

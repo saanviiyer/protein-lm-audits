@@ -1,0 +1,65 @@
+landscape,kind,n,proxy,rho
+DHFR,Enzyme activity,8000,esm2_wtm,0.41183369853646407
+DHFR,Enzyme activity,8000,blosum62,0.2713643771369056
+DHFR,Enzyme activity,8000,hydropathy,-0.08921915072270126
+DHFR,Enzyme activity,8000,n_mut,-0.2475494489940742
+GB1,Binding,149361,esm2_wtm,0.1448679689495958
+GB1,Binding,149361,blosum62,0.07465673333148437
+GB1,Binding,149361,hydropathy,0.3232352166480314
+GB1,Binding,149361,n_mut,-0.1449275437059576
+ParD2,Binding,7882,esm2_wtm,0.57964206400661
+ParD2,Binding,7882,blosum62,0.35732520091990205
+ParD2,Binding,7882,hydropathy,0.20155376357888913
+ParD2,Binding,7882,n_mut,-0.2975524544704858
+ParD3,Binding,7882,esm2_wtm,0.5713781152288028
+ParD3,Binding,7882,blosum62,0.14436461898642736
+ParD3,Binding,7882,hydropathy,0.08388207962383908
+ParD3,Binding,7882,n_mut,-0.45637056042996815
+T7,Enzyme activity,6725,esm2_wtm,0.009131960027748095
+T7,Enzyme activity,6725,blosum62,-0.016312711447403316
+T7,Enzyme activity,6725,hydropathy,0.041463603798272464
+T7,Enzyme activity,6725,n_mut,-0.01918678236578083
+TEV,Enzyme activity,159132,esm2_wtm,0.12187635377070591
+TEV,Enzyme activity,159132,blosum62,0.06844077029505857
+TEV,Enzyme activity,159132,hydropathy,0.01930347799105233
+TEV,Enzyme activity,159132,n_mut,-0.11971521106989151
+TrpB3A,Enzyme activity,7971,esm2_wtm,0.21813255815296942
+TrpB3A,Enzyme activity,7971,blosum62,0.11014498378514155
+TrpB3A,Enzyme activity,7971,hydropathy,-0.1880425641020281
+TrpB3A,Enzyme activity,7971,n_mut,-0.17765764365707418
+TrpB3B,Enzyme activity,7996,esm2_wtm,0.04143552363159284
+TrpB3B,Enzyme activity,7996,blosum62,0.010103233193930796
+TrpB3B,Enzyme activity,7996,hydropathy,-0.006531343336725801
+TrpB3B,Enzyme activity,7996,n_mut,-0.021137486128476865
+TrpB3C,Enzyme activity,7994,esm2_wtm,0.15754280698340623
+TrpB3C,Enzyme activity,7994,blosum62,0.13862530098924025
+TrpB3C,Enzyme activity,7994,hydropathy,-0.16804282807423618
+TrpB3C,Enzyme activity,7994,n_mut,-0.06491360727118037
+TrpB3D,Enzyme activity,7763,esm2_wtm,0.24421448994976794
+TrpB3D,Enzyme activity,7763,blosum62,0.1679598469835282
+TrpB3D,Enzyme activity,7763,hydropathy,0.1863488212365257
+TrpB3D,Enzyme activity,7763,n_mut,-0.11342847940799416
+TrpB3E,Enzyme activity,7964,esm2_wtm,0.03429852428525113
+TrpB3E,Enzyme activity,7964,blosum62,-0.024214945956592605
+TrpB3E,Enzyme activity,7964,hydropathy,0.10266035303642476
+TrpB3E,Enzyme activity,7964,n_mut,-0.021222994981096487
+TrpB3F,Enzyme activity,7737,esm2_wtm,0.10881887887069912
+TrpB3F,Enzyme activity,7737,blosum62,0.03531341319401393
+TrpB3F,Enzyme activity,7737,hydropathy,0.014740248287334484
+TrpB3F,Enzyme activity,7737,n_mut,-0.19740880683474402
+TrpB3G,Enzyme activity,7891,esm2_wtm,0.07015577931596924
+TrpB3G,Enzyme activity,7891,blosum62,0.026869382575509138
+TrpB3G,Enzyme activity,7891,hydropathy,0.02055219633694443
+TrpB3G,Enzyme activity,7891,n_mut,-0.13091191170650832
+TrpB3H,Enzyme activity,7716,esm2_wtm,-0.01571354840855631
+TrpB3H,Enzyme activity,7716,blosum62,-0.029880223494784246
+TrpB3H,Enzyme activity,7716,hydropathy,0.06995164650575598
+TrpB3H,Enzyme activity,7716,n_mut,0.024180353924062075
+TrpB3I,Enzyme activity,7784,esm2_wtm,0.5436098533144563
+TrpB3I,Enzyme activity,7784,blosum62,0.26260160232131646
+TrpB3I,Enzyme activity,7784,hydropathy,0.4221503363338073
+TrpB3I,Enzyme activity,7784,n_mut,-0.18830178718812687
+TrpB4,Enzyme activity,159129,esm2_wtm,0.18532855938500334
+TrpB4,Enzyme activity,159129,blosum62,0.09432174809232484
+TrpB4,Enzyme activity,159129,hydropathy,0.12463238134731353
+TrpB4,Enzyme activity,159129,n_mut,-0.10157684848371773

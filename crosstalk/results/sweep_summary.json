@@ -1,0 +1,54 @@
+[
+  {
+    "task": "cognate",
+    "reward": "affinity",
+    "n_seeds": 16,
+    "d_reward": 0.013423181546874989,
+    "d_reward_p_sign": 0.000518798828125,
+    "d_reward_p_t": 1.539603269283542e-05,
+    "d_success": -0.010624999999999971,
+    "d_success_p_sign": 0.803619384765625,
+    "d_success_p_t": 0.5096972414704963,
+    "d_crosstalk": 0.023124999999999993,
+    "verdict": "DIVERGES: reward up, truth not up"
+  },
+  {
+    "task": "cognate",
+    "reward": "margin",
+    "n_seeds": 16,
+    "d_reward": 0.07276552508468752,
+    "d_reward_p_sign": 3.0517578125e-05,
+    "d_reward_p_t": 5.859389485247046e-10,
+    "d_success": 0.09468750000000004,
+    "d_success_p_sign": 3.0517578125e-05,
+    "d_success_p_t": 6.841253169550457e-08,
+    "d_crosstalk": -0.00125,
+    "verdict": "aligned: both up"
+  },
+  {
+    "task": "swap",
+    "reward": "affinity",
+    "n_seeds": 16,
+    "d_reward": 0.024424901087812464,
+    "d_reward_p_sign": 0.000518798828125,
+    "d_reward_p_t": 3.8286588595579673e-07,
+    "d_success": -0.044062500000000004,
+    "d_success_p_sign": 0.076812744140625,
+    "d_success_p_t": 0.016245442709906313,
+    "d_crosstalk": 0.0625,
+    "verdict": "DIVERGES: reward up, truth not up"
+  },
+  {
+    "task": "swap",
+    "reward": "margin",
+    "n_seeds": 16,
+    "d_reward": 0.08886408592750003,
+    "d_reward_p_sign": 3.0517578125e-05,
+    "d_reward_p_t": 3.5315968759906666e-12,
+    "d_success": 0.14718749999999997,
+    "d_success_p_sign": 3.0517578125e-05,
+    "d_success_p_t": 8.139825601779841e-10,
+    "d_crosstalk": -0.024375,
+    "verdict": "aligned: both up"
+  }
+]

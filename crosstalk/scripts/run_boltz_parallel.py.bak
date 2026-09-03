@@ -1,0 +1,115 @@
+"""Run the Boltz specificity audit as parallel co-folds.
+
+One fold takes ~40 min on this hardware but averages only ~0.7 cores, so the
+audit is throughput-bound rather than compute-bound and parallelises well.
+Each fold is an independent process writing into its own directory; results are
+collected as they land, so the run is resumable and a crash costs one fold.
+"""
+import argparse, csv, json, subprocess, sys, time
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from pathlib import Path
+
+import numpy as np
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from crosstalk.boltz import PARTNERS, complex_yaml, parse_confidence
+from crosstalk.landscape import load_pard3
+
+BOLTZ = Path(__file__).resolve().parents[1] / ".venv-boltz/bin/boltz"
+
+
+def stratify(L, n_per_cell, rng):
+    on, off = L.F[:, 0], L.F[:, 1]
+    cells = {"specific_E3": (on >= 0.8) & (off <= 0.2),
+             "promiscuous": (on >= 0.8) & (off >= 0.6),
+             "specific_E2": (on <= 0.2) & (off >= 0.8),
+             "dead": (on <= 0.2) & (off <= 0.2)}
+    picked = []
+    for name, mask in cells.items():
+        idx = np.where(mask)[0]
+        take = rng.choice(idx, size=min(n_per_cell, len(idx)), replace=False)
+        picked += [(L.seqs[i], name) for i in take]
+        print(f"  {name:12s}: sampled {len(take)} of {len(idx)}")
+    return picked
+
+
+def one_fold(variant, partner, workdir, timeout):
+    name = f"{variant}_{partner}"
+    case = Path(workdir) / name
+    done = case / f"boltz_results_{name}" / "predictions" / name
+    if list(done.glob("confidence_*.json")):
+        return variant, partner, parse_confidence(case), "cached"
+    case.mkdir(parents=True, exist_ok=True)
+    y = case / f"{name}.yaml"
+    y.write_text(complex_yaml(variant, partner))
+    cmd = [str(BOLTZ), "predict", str(y), "--out_dir", str(case),
+           "--accelerator", "cpu", "--devices", "1", "--use_msa_server",
+           "--recycling_steps", "0", "--diffusion_samples", "1",
+           "--sampling_steps", "25", "--num_workers", "0", "--output_format", "pdb"]
+    t = time.time()
+    r = subprocess.run(cmd, capture_output=True, timeout=timeout)
+    if not list(done.glob("confidence_*.json")):
+        return variant, partner, None, f"failed rc={r.returncode}"
+    return variant, partner, parse_confidence(case), f"{time.time()-t:.0f}s"
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--n-per-cell", type=int, default=6)
+    ap.add_argument("--workers", type=int, default=6)
+    ap.add_argument("--workdir", default="results/boltz")
+    ap.add_argument("--out", default="results/boltz_proxy.csv")
+    ap.add_argument("--timeout", type=int, default=7200)
+    ap.add_argument("--seed", type=int, default=0)
+    args = ap.parse_args()
+
+    L = load_pard3()
+    rng = np.random.default_rng(args.seed)
+    picked = stratify(L, args.n_per_cell, rng)
+    jobs = [(v, p) for v, _ in picked for p in PARTNERS]
+    print(f"\n{len(picked)} variants x {len(PARTNERS)} partners = {len(jobs)} folds, "
+          f"{args.workers} at a time\n", flush=True)
+
+    got = {}
+    with ThreadPoolExecutor(max_workers=args.workers) as ex:
+        futs = {ex.submit(one_fold, v, p, args.workdir, args.timeout): (v, p)
+                for v, p in jobs}
+        for k, fut in enumerate(as_completed(futs), 1):
+            v, p = futs[fut]
+            try:
+                v, p, conf, note = fut.result()
+            except Exception as e:
+                conf, note = None, f"error {type(e).__name__}"
+            got[(v, p)] = conf
+            ip = conf.get("iptm") if conf else None
+            print(f"[{k}/{len(jobs)}] {v} {p}: iptm={ip if ip is None else round(ip,4)} ({note})",
+                  flush=True)
+            _write(L, picked, got, args.out)
+    print(f"\nwrote {args.out}")
+
+
+def _write(L, picked, got, out):
+    rows = []
+    for variant, cell in picked:
+        rec = {"variant": variant, "cell": cell,
+               "W_ParE3": float(L.F[L.index[variant], 0]),
+               "W_ParE2": float(L.F[L.index[variant], 1])}
+        ok = True
+        for partner in PARTNERS:
+            c = got.get((variant, partner))
+            if c is None:
+                ok = False
+            rec[f"iptm_{partner}"] = c.get("iptm") if c else ""
+            rec[f"ptm_{partner}"] = c.get("ptm") if c else ""
+            rec[f"plddt_{partner}"] = c.get("complex_plddt") if c else ""
+        if any(rec[f"iptm_{p}"] != "" for p in PARTNERS):
+            rows.append(rec)
+    if not rows:
+        return
+    Path(out).parent.mkdir(parents=True, exist_ok=True)
+    with open(out, "w", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
+
+
+if __name__ == "__main__":
+    main()

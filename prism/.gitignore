@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.mypy_cache/
+.DS_Store
+results/
+*.joblib
+*.pdb
+all_runs/
+profiles/
+centroids/
+*.fasta

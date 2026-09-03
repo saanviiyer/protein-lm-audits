@@ -1,0 +1,3 @@
+protein,source,len,esm:real,esm:rotate +1,esm:rotate mid,esm:reverse,esm:shuffle,esm:conservative 10%,esm:radical 10%,bigram:real,bigram:rotate +1,bigram:rotate mid,bigram:reverse,bigram:shuffle,bigram:conservative 10%,bigram:radical 10%
+IF1_ECOLI_Kelsic_2016,sec26,72,-0.57718,-0.78783,-1.48203,-2.90643,-2.93104,-0.76606,-1.54039,-3.19046,-3.20551,-3.22056,-3.18346,-3.22056,-3.20016,-3.16231
+TAT_HV1BR_Fernandes_2016,sec26,86,-2.76687,-2.84492,-2.82975,-2.93370,-3.05511,-2.78378,-2.77601,-3.18756,-3.18756,-3.18756,-3.17493,-3.11356,-3.22014,-3.23625

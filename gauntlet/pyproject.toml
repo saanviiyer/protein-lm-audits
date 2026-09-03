@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gauntlet-bio"
+version = "0.1.0"
+description = "Decide which protein variants to order next, and whether any model has earned that decision."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+dependencies = ["numpy", "pandas", "scipy", "scikit-learn", "biopython"]
+
+[project.optional-dependencies]
+esm = ["torch>=2.0", "transformers>=4.40"]
+plot = ["matplotlib"]
+data = ["openpyxl"]
+
+[project.scripts]
+gauntlet = "gauntlet.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

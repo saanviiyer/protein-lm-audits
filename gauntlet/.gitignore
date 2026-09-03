@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+results/audit.log
+results/pg_backtest.log
+data/proteingym/esm_cache/
+papers/*_overleaf.zip
+papers/*/main.pdf
+papers/*/main.aux
+papers/*/main.log
+papers/*/main.out
+papers/*/main.bbl
+papers/*/main.blg
+
+# Large re-downloadable inputs and regenerable derived tables.
+# The small, expensive artifacts stay tracked on purpose: the ESM-2 log-prob
+# caches (36 KB / 24 KB) are the only part that costs GPU time, and the audit
+# and top-k tables are the results themselves.
+data/ssmula/data.zip
+results/ssmula_scored_variants.csv

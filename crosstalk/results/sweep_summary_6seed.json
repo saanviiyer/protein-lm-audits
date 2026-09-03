@@ -1,0 +1,54 @@
+[
+  {
+    "task": "cognate",
+    "reward": "affinity",
+    "n_seeds": 6,
+    "d_reward": 0.01313318105999998,
+    "d_reward_p_sign": 0.03125,
+    "d_reward_p_t": 0.014169835205724013,
+    "d_success": -0.029166666666666646,
+    "d_success_p_sign": 0.6875,
+    "d_success_p_t": 0.44275323509919323,
+    "d_crosstalk": 0.039166666666666655,
+    "verdict": "DIVERGES: reward up, truth not up"
+  },
+  {
+    "task": "cognate",
+    "reward": "margin",
+    "n_seeds": 6,
+    "d_reward": 0.06966086312500004,
+    "d_reward_p_sign": 0.03125,
+    "d_reward_p_t": 0.00028976121195121226,
+    "d_success": 0.07750000000000003,
+    "d_success_p_sign": 0.03125,
+    "d_success_p_t": 0.0017103597785198183,
+    "d_crosstalk": -0.0025,
+    "verdict": "aligned: both up"
+  },
+  {
+    "task": "swap",
+    "reward": "affinity",
+    "n_seeds": 6,
+    "d_reward": 0.027981362406666693,
+    "d_reward_p_sign": 0.03125,
+    "d_reward_p_t": 0.0011216264197881443,
+    "d_success": -0.025000000000000005,
+    "d_success_p_sign": 1.0,
+    "d_success_p_t": 0.4908077253731872,
+    "d_crosstalk": 0.04583333333333334,
+    "verdict": "DIVERGES: reward up, truth not up"
+  },
+  {
+    "task": "swap",
+    "reward": "margin",
+    "n_seeds": 6,
+    "d_reward": 0.08154342167083335,
+    "d_reward_p_sign": 0.03125,
+    "d_reward_p_t": 8.962702204525721e-05,
+    "d_success": 0.1175,
+    "d_success_p_sign": 0.03125,
+    "d_success_p_t": 0.001857750906608772,
+    "d_crosstalk": -0.02916666666666667,
+    "verdict": "aligned: both up"
+  }
+]

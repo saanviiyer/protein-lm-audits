@@ -1,0 +1,28 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+.venv/
+*.egg-info/
+
+# Large inputs, all re-obtainable — see README
+prism/Pfam-A.hmm*
+gauntlet/data/
+gauntlet/results/*.csv.gz
+shibboleth/data/cache/
+*.pt
+*.ckpt
+*.safetensors
+
+# Manuscripts and submission planning stay out of the shareable repo
+papers/
+PROPOSAL.md
+*_PROPOSAL.md
+PROPOSALS_*.md
+PREREG.md
+VENUES.md
+COLLAB_PLAN.md
+MEGAPAPER_PLAN.md
+ICLR_SPINE.md
+PROJECT_REPORT_*.md

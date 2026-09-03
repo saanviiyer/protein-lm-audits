@@ -1,0 +1,9 @@
+__pycache__/
+.pytest_cache/
+.venv-boltz/
+data/raw/*.gz
+data/absolut/*.zip
+data/absolut/cache/
+data/absolut/*.pkl
+results/boltz_timing/boltz_results_*/
+results/boltz/

@@ -1,0 +1,2 @@
+model,n_sequences,reference_delta,contrast,a,b,probes,n,mean_diff,ci_lo,ci_hi,boot_lo,boot_hi,a_lower,ties,binom_p,ratio_to_reference,verdict,passed
+InstaDeepAI/nucleotide-transformer-v2-50m-multi-species,24,0.42124462499999993,frame-anchored stop,stop in frame,stop out of frame,reading_frame,24,0.01846700000000005,-0.011902439592251155,0.04883643959225126,-0.009548089583333098,0.046776061458333296,14,0,0.5412561893463135,0.04383913503940864,NULL,False
